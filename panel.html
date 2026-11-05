@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de usuario · Portfolio</title>
+</head>
+<body>
+
+<header>
+  <h1>Mi panel · Portfolio</h1>
+  <nav>
+    <a href="proyecto_form.html">+ Nuevo proyecto</a>
+    <a href="habilidad_form.html">+ Nueva habilidad</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- DATOS DEL USUARIO tabla (usuarios)-->
+  <section id="datos-usuario">
+    <h2>Mis datos</h2>
+    <dl>
+      <dt>Nombre completo</dt><dd id="u-nombre">—</dd>
+      <dt>Usuario</dt><dd id="u-usuario">—</dd>
+      <dt>Email</dt><dd id="u-email">—</dd>
+      <dt>Miembro desde</dt><dd id="u-fecha">—</dd>
+    </dl>
+    <div class="acciones">
+      <button class="btn outline" id="btn-editar">Editar datos</button>
+      <button class="btn outline" id="btn-password">Cambiar contraseña</button>
+    </div>
+  </section>
+
+  <!-- HABILIDADES tabla (habilidades_lenguaje / habilidades_tecnologia) -->
+  <section id="habilidades">
+    <h2>Mis habilidades</h2>
+    <h3>Lenguajes</h3>
+    <div class="tags" id="lista-lenguajes">
+      <span class="vacio">Sin lenguajes cargados.</span>
+    </div>
+    <h3>Tecnologías</h3>
+    <div class="tags" id="lista-tecnologias">
+      <span class="vacio">Sin tecnologías cargadas.</span>
+    </div>
+    <div class="acciones">
+      <a class="btn" href="habilidad_form.html">+ Agregar habilidad</a>
+    </div>
+  </section>
+
+  <!-- PROYECTOS tabla (proyectos) -->
+  <section id="proyectos" style="grid-column: 1 / -1;">
+    <h2>Mis proyectos</h2>
+    <div id="lista-proyectos">
+      <p class="vacio">Todavía no cargaste proyectos.</p>
+    </div>
+    <div class="acciones">
+      <a class="btn" href="proyecto_form.html">+ Nuevo proyecto</a>
+    </div>
+  </section>
+
+</main>
+<script src="js/api.js"></script>
+<script src="js/panel.js"></script>
+</body>
+</html>
