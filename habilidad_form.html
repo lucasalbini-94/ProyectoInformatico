@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<title>Nueva habilidad · Portfolio</title>
+</head>
+<body>
+
+<header>
+  <h1>Nueva habilidad</h1>
+  <a href="panel.html">← Volver al panel</a>
+</header>
+
+<main>
+  <div class="msg-ok" id="msg-ok">Habilidad guardada correctamente.</div>
+
+  <form id="form-habilidad" novalidate>
+
+    <!-- Selector de tipo -->
+    <div class="tabs">
+      <button type="button" id="tab-lenguaje" class="activo">Lenguaje</button>
+      <button type="button" id="tab-tecnologia">Tecnología</button>
+    </div>
+
+    <!-- Esta linea esta oculta, va a servir para saber si esta lenguaje o habilidad -->
+    <input type="hidden" id="tipo" name="tipo" value="lenguaje"> 
+
+    <fieldset>
+      <div class="campo">
+        <label for="id_item" id="label-item">Lenguaje *</label>
+        <select id="id_item" name="id_item" required>
+          <option value="">— Cargando catálogo —</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="nivel">Nivel *</label>
+        <select id="nivel" name="nivel" required>
+          <option value="">— Elegí un nivel —</option>
+          <option value="BASICO">Básico</option>
+          <option value="INTERMEDIO">Intermedio</option>
+          <option value="AVANZADO">Avanzado</option>
+          <option value="EXPERTO">Experto</option>
+        </select>
+        <div class="error" data-for="nivel" hidden></div>
+      </div>
+    </fieldset>
+
+    <div class="acciones">
+      <button type="button" class="secundario" onclick="history.back()">Cancelar</button>
+      <button type="submit" class="primario" id="btn-submit">Guardar habilidad</button>
+    </div>
+  </form>
+</main>
+<script src="js/habilidad_form.js"></script>
+</body>
+</html>
+

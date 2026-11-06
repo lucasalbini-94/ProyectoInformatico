@@ -1,0 +1,204 @@
+/* ===== RESET MÍNIMO ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+  background: #f7f7f7;
+  padding: 0 1rem 2rem;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+}
+header h1 { font-size: 1.25rem; margin: 0; }
+header a  { color: #0645ad; text-decoration: none; }
+header a:hover { text-decoration: underline; }
+header nav { display: flex; gap: 1rem; }
+
+/* ===== CONTENIDO ===== */
+main { max-width: 900px; margin: 0 auto; }
+
+section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+section h2 { margin: 0 0 .75rem; font-size: 1.1rem; }
+section h3 { margin: 1rem 0 .5rem; font-size: 1rem; }
+
+/* ===== DATOS (dl) ===== */
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: .4rem 1rem;
+  margin: 0;
+}
+dt { font-weight: 600; color: #555; }
+dd { margin: 0; }
+
+/* ===== BOTONES Y LINKS-BOTÓN ===== */
+.btn,
+button {
+  display: inline-block;
+  font: inherit;
+  padding: .5rem .9rem;
+  border: 1px solid #0645ad;
+  border-radius: 5px;
+  background: #0645ad;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+}
+.btn:hover,
+button:hover { opacity: .9; }
+
+.btn.outline,
+button.secundario {
+  background: transparent;
+  color: #0645ad;
+}
+
+button.primario { background: #0a7d2c; border-color: #0a7d2c; }
+
+/* ===== ACCIONES (contenedor de botones) ===== */
+.acciones {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* ===== TAGS (habilidades) ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: .5rem;
+}
+.tags span {
+  background: #e8eef7;
+  color: #0645ad;
+  padding: .2rem .6rem;
+  border-radius: 12px;
+  font-size: .85rem;
+}
+.tags .vacio {
+  background: none;
+  color: #888;
+  font-style: italic;
+  padding: 0;
+}
+
+/* ===== FORMULARIOS ===== */
+form fieldset {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0 0 1rem;
+}
+form legend {
+  font-weight: 600;
+  padding: 0 .4rem;
+}
+
+.campo { margin-bottom: .9rem; }
+.campo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .25rem;
+  font-size: .9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font: inherit;
+  background: #fff;
+}
+textarea { min-height: 90px; resize: vertical; }
+
+.hint { font-size: .8rem; color: #777; margin-top: .2rem; }
+.error {
+  font-size: .85rem;
+  color: #b00020;
+  margin-top: .2rem;
+}
+
+/* ===== GRID 2 COLUMNAS ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+}
+@media (max-width: 600px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ===== TABS (lenguaje / tecnología) ===== */
+.tabs {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+.tabs button {
+  background: transparent;
+  color: #0645ad;
+  border: 1px solid #0645ad;
+}
+.tabs button.activo {
+  background: #0645ad;
+  color: #fff;
+}
+
+/* ===== MENSAJE OK ===== */
+.msg-ok {
+  display: none;
+  background: #e3f5e8;
+  border: 1px solid #0a7d2c;
+  color: #0a7d2c;
+  padding: .6rem .9rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* ===== CHECKS (proyecto_form) ===== */
+.checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+}
+.checks label {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .9rem;
+}
+
+/* ===== LINKS DINÁMICOS (proyecto_form) ===== */
+#links-container > div {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+#links-container input { flex: 1; }

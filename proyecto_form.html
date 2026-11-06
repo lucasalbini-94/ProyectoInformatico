@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuevo proyecto · Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/proyecto_form.css">
+</head>
+<body>
+
+<header>
+  <h1>Nuevo proyecto</h1>
+  <a href="panel.html">← Volver al panel</a>
+</header>
+
+<main>
+  <div class="msg-ok" id="msg-ok">Proyecto creado correctamente.</div>
+
+  <form id="form-proyecto" novalidate>
+
+    <!-- ====== DATOS DEL PROYECTO (tabla proyectos) ====== -->
+    <fieldset>
+      <legend>Datos del proyecto</legend>
+
+      <!-- Ingresa el nombre del proyecto -->
+        <label for="nombre_proyecto">Nombre del proyecto *</label>
+        <input type="text" id="nombre_proyecto" name="nombre_proyecto" maxlength="100" required>
+
+        <label for="descripcion">Descripción *</label>
+        <textarea id="descripcion" name="descripcion" maxlength="500" required></textarea>
+         <!-- Habria que ver como hacer que vaya descontando caracteres -->
+        <div class="hint">De 0 hasta 500 caracteres</div>
+
+      <div class="grid-2">
+        <div class="campo">
+          <label for="etapa">Etapa *</label>
+          <select id="etapa" name="etapa" required>
+            <option value="">— Elegí una etapa —</option>
+            <option value="COMIENZO">Comienzo</option>
+            <option value="DESARROLLO">Desarrollo</option>
+            <option value="TESTEO">Testeo</option>
+            <option value="FINALIZADO">Finalizado</option>
+            <option value="PAUSADO">Pausado</option>
+          </select>
+          <div class="error" data-for="etapa" hidden></div>
+        </div>
+
+        <div class="campo">
+          <label for="id_categoria_proyecto">Categoría *</label>
+          <select id="id_categoria_proyecto" name="id_categoria_proyecto" required>
+            <option value="">— Cargando categorías —</option>
+          </select>
+          <div class="error" data-for="id_categoria_proyecto" hidden></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="campo">
+          <label for="fecha_limite">Fecha límite</label>
+          <input type="date" id="fecha_limite" name="fecha_limite">
+          <div class="hint">Opcional.</div>
+        </div>
+        <div class="campo">
+          <label for="fecha_finalizacion">Fecha de finalización</label>
+          <input type="date" id="fecha_finalizacion" name="fecha_finalizacion">
+          <div class="hint">Opcional, solo si ya terminó.</div>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- ====== TECNOLOGÍAS Y LENGUAJES (proyecto_lenguaje / proyecto_tecnologia) ====== -->
+    <fieldset>
+      <legend>Lenguajes usados</legend>
+      <div class="checks" id="checks-lenguajes">
+        <span class="hint">Cargando tus lenguajes…</span>
+      </div>
+      <div class="hint">Solo se muestran los lenguajes que tenés cargados en tus habilidades.</div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Tecnologías usadas</legend>
+      <div class="checks" id="checks-tecnologias">
+        <span class="hint">Cargando tus tecnologías…</span>
+      </div>
+      <div class="hint">Solo se muestran las tecnologías que tenés cargadas en tus habilidades.</div>
+    </fieldset>
+
+    <!-- ====== LINKS (links_proyecto) ====== -->
+    <fieldset>
+      <legend>Links del proyecto</legend>
+      <div id="links-container"></div>
+      <button type="button" class="secundario" id="btn-add-link" style="margin-top:.5rem;">+ Agregar link</button>
+    </fieldset>
+
+    <div class="acciones">
+      // Si se apreta este primer boton va para atrás
+      <button type="button" class="secundario" onclick="history.back()">Cancelar</button>
+      <button type="submit" class="primario" id="btn-submit">Crear proyecto</button>
+    </div>
+  </form>
+</main>
+</body>
+</html>
