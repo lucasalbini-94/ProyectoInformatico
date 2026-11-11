@@ -1,0 +1,12 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "LinkProyecto",
+    "type": "object",
+    "properties": {
+        "idProyecto": {"type": "integer", "minimum": 1},
+        "tipo": {"type": "string", "minLength": 3, "maxLength": 50},
+        "url": {"type": "string", "format": "uri", "minLength": 5, "maxLength": 500}
+    },
+    "required": ["idProyecto", "tipo", "url"],
+    "additionalProperties": false
+}

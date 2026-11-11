@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Usuario",
+    "type": "object",
+    "properties": {
+        "nombreUsuario": {"type": "string", "minLength": 3, "maxLength": 50},
+        "email": {"type": "string", "format": "email"},
+        "nombre": {"type": "string", "minLength": 3, "maxLength": 100},
+        "apellido": {"type": "string", "minLength": 3, "maxLength": 100},
+        "passwordHash": {"type": "string", "minLength": 255, "maxLength": 255},
+        "fechaCreacion": {"type": "string", "format": "date-time"}
+    },
+    "required": ["nombreUsuario", "email", "nombre", "apellido", "passwordHash", "fechaCreacion"],
+    "additionalProperties": false
+}

@@ -1,0 +1,11 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "ProyectoLenguaje",
+    "type": "object",
+    "properties": {
+        "idProyecto": {"type": "integer", "minimum": 1},
+        "nombre": {"type": "string", "minLength": 1, "maxLength": 50}
+    },
+    "required": ["idProyecto", "nombre"],
+    "additionalProperties": false
+}
