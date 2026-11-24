@@ -62,21 +62,21 @@ CREATE TABLE tecnologias (
 
 CREATE TABLE habilidades_lenguaje (
     db_id_usuario  INT NOT NULL,
-    db_id_lenguaje INT NOT NULL,
+    db_lenguaje VARCHAR(50) NOT NULL,
     db_nivel       VARCHAR(50) NOT NULL,
-    PRIMARY KEY (db_id_usuario, db_id_lenguaje),
+    PRIMARY KEY (db_id_usuario, db_lenguaje),
     FOREIGN KEY (db_id_usuario)  REFERENCES usuarios(id)     ON DELETE CASCADE,
-    FOREIGN KEY (db_id_lenguaje) REFERENCES lenguajes(id)
+    FOREIGN KEY (db_lenguaje) REFERENCES lenguajes(db_nombre)
 );
 
 # Igual que habilidades_lenguaje pero para tecnologías.
 CREATE TABLE habilidades_tecnologia (
     db_id_usuario    INT NOT NULL,
-    db_id_tecnologia INT NOT NULL,
+    db_tecnologia VARCHAR(100) NOT NULL,
     db_nivel         VARCHAR(50) NOT NULL,
-    PRIMARY KEY (db_id_usuario, db_id_tecnologia),
+    PRIMARY KEY (db_id_usuario, db_tecnologia),
     FOREIGN KEY (db_id_usuario)    REFERENCES usuarios(id)       ON DELETE CASCADE,
-    FOREIGN KEY (db_id_tecnologia) REFERENCES tecnologias(id)
+    FOREIGN KEY (db_tecnologia) REFERENCES tecnologias(db_nombre)
 );
 
 # tipo: valores fijos (REPOSITORIO, DEMO, DOCUMENTACIÓN, etc.) manejados desde el 

@@ -7,7 +7,7 @@
         "email": {"type": "string", "format": "email"},
         "nombre": {"type": "string", "minLength": 3, "maxLength": 100},
         "apellido": {"type": "string", "minLength": 3, "maxLength": 100},
-        "passwordHash": {"type": "string", "minLength": 255, "maxLength": 255},
+        "passwordHash": {"type": "string", "maxLength": 255},
         "fechaCreacion": {"type": "string", "format": "date-time"}
     },
     "required": ["nombreUsuario", "email", "nombre", "apellido", "passwordHash", "fechaCreacion"],

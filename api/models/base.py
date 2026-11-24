@@ -5,7 +5,7 @@ class ModeloBase:
     _columna_db = None
 
     def __init_subclass__(cls, **kwargs):
-        super().__init__subclass__(**kwargs)
+        super().__init_subclass__(**kwargs)
 
         if cls.schema is None or cls._columna_db is None:
             raise NotImplementedError(
