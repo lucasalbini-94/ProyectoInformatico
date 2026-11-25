@@ -7,12 +7,12 @@ USE portfolio;
 
 CREATE TABLE usuarios (
     id              INT AUTO_INCREMENT,
-    nombre_usuario  VARCHAR(50)  NOT NULL UNIQUE,
-    email           VARCHAR(255) NOT NULL UNIQUE,
-    nombre          VARCHAR(100) NOT NULL,
-    apellido        VARCHAR(100) NOT NULL,
-    password_hash   VARCHAR(255) NOT NULL,
-    fecha_creacion  DATETIME DEFAULT CURRENT_TIMESTAMP,
+    db_nombre_usuario  VARCHAR(50)  NOT NULL UNIQUE,
+    db_email           VARCHAR(255) NOT NULL UNIQUE,
+    db_nombre          VARCHAR(100) NOT NULL,
+    db_apellido        VARCHAR(100) NOT NULL,
+    db_password_hash   VARCHAR(255) NOT NULL,
+    db_fecha_creacion  DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 

@@ -19,3 +19,9 @@ def get_usuario_por_id(id):
 def post_usuario(datos):
     nuevo = Usuario.post_usuario(datos)
     return jsonify(nuevo), 201
+
+@app.route('/usuarios/<int:id>', methods=['PUT'])
+@validar_json(Usuario.validar)
+def put_usuario(datos, id):
+    actualizado = Usuario.put_usuario(datos, id)
+    return jsonify(actualizado), 200
