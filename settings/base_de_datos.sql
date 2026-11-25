@@ -41,16 +41,16 @@ CREATE TABLE proyectos (
 # Catálogo de lenguajes. Se llama una sola vez a la api. Todavia no sabemos cada cuanto o en 
 # que moemento
 CREATE TABLE lenguajes (
-    id_lenguaje INT NOT NULL,
+    id INT NOT NULL,
     nombre      VARCHAR(50) NOT NULL UNIQUE,
-    PRIMARY KEY (id_lenguaje)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE tecnologias (
-    id_tecnologia INT NOT NULL,
+    id INT NOT NULL,
     nombre        VARCHAR(100) NOT NULL UNIQUE,
     categoria     VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id_tecnologia)
+    PRIMARY KEY (id)
 );
 
 # nivel: Decidimos no hacer una tabla para valores fijos (BÁSICO, INTERMEDIO, AVANZADO, 
@@ -63,7 +63,7 @@ CREATE TABLE habilidades_lenguaje (
     nivel       VARCHAR(50) NOT NULL,
     PRIMARY KEY (id_usuario, id_lenguaje),
     FOREIGN KEY (id_usuario)  REFERENCES usuarios(id)     ON DELETE CASCADE,
-    FOREIGN KEY (id_lenguaje) REFERENCES lenguajes(id_lenguaje)
+    FOREIGN KEY (id_lenguaje) REFERENCES lenguajes(id)
 );
 
 # Igual que habilidades_lenguaje pero para tecnologías.
@@ -73,7 +73,7 @@ CREATE TABLE habilidades_tecnologia (
     nivel         VARCHAR(50) NOT NULL,
     PRIMARY KEY (id_usuario, id_tecnologia),
     FOREIGN KEY (id_usuario)    REFERENCES usuarios(id)       ON DELETE CASCADE,
-    FOREIGN KEY (id_tecnologia) REFERENCES tecnologias(id_tecnologia)
+    FOREIGN KEY (id_tecnologia) REFERENCES tecnologias(id)
 );
 
 # tipo: valores fijos (REPOSITORIO, DEMO, DOCUMENTACIÓN, etc.) manejados desde el 
@@ -94,7 +94,7 @@ CREATE TABLE proyecto_lenguaje (
     id_lenguaje INT NOT NULL,
     PRIMARY KEY (id_proyecto, id_lenguaje),
     FOREIGN KEY (id_proyecto) REFERENCES proyectos(id)      ON DELETE CASCADE,
-    FOREIGN KEY (id_lenguaje) REFERENCES lenguajes(id_lenguaje)
+    FOREIGN KEY (id_lenguaje) REFERENCES lenguajes(id)
 );
 
 CREATE TABLE proyecto_tecnologia (
@@ -102,5 +102,5 @@ CREATE TABLE proyecto_tecnologia (
     id_tecnologia INT NOT NULL,
     PRIMARY KEY (id_proyecto, id_tecnologia),
     FOREIGN KEY (id_proyecto)   REFERENCES proyectos(id)        ON DELETE CASCADE,
-    FOREIGN KEY (id_tecnologia) REFERENCES tecnologias(id_tecnologia)
+    FOREIGN KEY (id_tecnologia) REFERENCES tecnologias(id)
 );
