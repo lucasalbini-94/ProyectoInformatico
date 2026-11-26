@@ -98,15 +98,7 @@ class Usuario(ModeloBase):
             raise ColumnaUnicaDuplicadaError("email", email)
 
         asignaciones = ", ".join(f"{cls._columna_db[campo]} = %s" for campo in cls._campos)
-
-        # Ajuste de fecha para enviar el formato requerido en MySQL
-        from datetime import timezone
-        from email.utils import parsedate_to_datetime
-
-        fecha = parsedate_to_datetime(datos['fechaCreacion'])
-        fecha_db = fecha.astimezone(timezone.utc).replace(tzinfo=None)
-        
-        valores = [fecha_db if campo == "fechaCreacion" else datos[campo] for campo in cls._campos] + [id]
+        valores = [datos[campo] for campo in cls._campos] + [id]
 
         cursor.execute(
             f"UPDATE usuarios SET {asignaciones} WHERE id = %s",

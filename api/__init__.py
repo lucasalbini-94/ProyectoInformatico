@@ -12,3 +12,6 @@ def test():
 registrar_manejadores(app)
 
 import api.routes.usuario
+import api.routes.lenguajes
+import api.routes.tecnologias
+import api.routes.proyectos

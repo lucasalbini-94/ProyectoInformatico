@@ -7,11 +7,11 @@
         "nombreProyecto": {"type": "string", "minLength": 3, "maxLength": 100},
         "descripcion": {"type": "string", "minLength": 10, "maxLength": 500},
         "etapa": {"type": "string", "enum": ["Comienzo", "Desarrollo", "Testeo", "Finalizado", "Pausado"]},
-        "fechaCreacion": {"type": "string", "format": "date-time"},
-        "fechaActualizacion": {"type": "string", "format": "date-time"},
-        "fechaFinalizacion": {"type": "string", "format": "date-time"},
-        "fechaLimite": {"type": "string", "format": "date-time"},
-        "idCategoriaProyecto": {"type": "string", "maxLength": 50}
+        "fechaCreacion": {"type": "string", "minLength": 1, "format": "date-time"},
+        "fechaActualizacion": {"type": "string", "minLength": 1, "format": "date-time"},
+        "fechaFinalizacion": {"type": "string", "minLength": 1, "format": "date-time"},
+        "fechaLimite": {"type": "string", "minLength": 1, "format": "date-time"},
+        "idCategoriaProyecto": {"type": "integer", "minimum": 1}
     },
     "required": ["idUsuario", "nombreProyecto", "descripcion", "etapa", "idCategoriaProyecto"],
     "additionalProperties": false
